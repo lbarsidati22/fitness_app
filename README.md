@@ -19,6 +19,28 @@ Based on the modular architecture, the app includes the following key features:
 
 This project is built using **Clean Architecture** principles and a robust tech stack:
 
+```mermaid
+graph TD
+    subgraph Presentation["Presentation Layer"]
+        UI[UI Pages] --> Bloc[BLoC / Cubit]
+    end
+
+    subgraph Domain["Domain Layer"]
+        UseCase[Use Cases] --> RepoInt[Repository Interfaces]
+        Entities
+    end
+
+    subgraph Data["Data Layer"]
+        RepoImpl[Repository Implementation] --> DataSource[Data Sources]
+        DataSource --> API[Gemini API]
+        RepoImpl --> Models
+    end
+
+    Bloc --> UseCase
+    RepoImpl -.-> RepoInt
+    RepoImpl --> Entities
+```
+
 -   **Framework**: [Flutter](https://flutter.dev/)
 -   **State Management**: [Flutter Bloc](https://pub.dev/packages/flutter_bloc) (Cubit)
 -   **Dependency Injection**: [GetIt](https://pub.dev/packages/get_it) & [Injectable](https://pub.dev/packages/injectable)
@@ -62,7 +84,7 @@ lib/
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/yourusername/fitness_app.git
+    git clone https://github.com/lbarsidati22/fitness_app.git
     cd fitness_app
     ```
 
@@ -81,14 +103,6 @@ lib/
     flutter run
     ```
 
-## 📸 Screenshots
 
-*(Add your application screenshots here)*
-
-| Home Screen | Workout Details | AI Chat |
-|:-----------:|:---------------:|:-------:|
-|   ![Home]   |    ![Workout]   | ![Chat] |
-
----
 
 Made with ❤️ using Flutter
