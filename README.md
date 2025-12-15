@@ -1,3 +1,5 @@
+![Fitness App](assets/image/fitness_app.png)
+
 # 🏋️ Fitness App
 
 A comprehensive Flutter-based fitness application designed to help users track workouts, manage their diet, and stay fit with the help of AI-powered features.
